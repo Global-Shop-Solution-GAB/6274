@@ -1,0 +1,874 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.f_Main..Create(BaseForm)
+Gui.f_Main..Caption("CSR Tech Help")
+Gui.f_Main..Size(319,97)
+Gui.f_Main..MinX(0)
+Gui.f_Main..MinY(0)
+Gui.f_Main..Position(0,0)
+Gui.f_Main..AlwaysOnTop(False)
+Gui.f_Main..FontName("Tahoma")
+Gui.f_Main..FontSize(8.25)
+Gui.f_Main..ControlBox(True)
+Gui.f_Main..MaxButton(False)
+Gui.f_Main..MinButton(True)
+Gui.f_Main..MousePointer(0)
+Gui.f_Main..Moveable(True)
+Gui.f_Main..Sizeable(False)
+Gui.f_Main..ShowInTaskBar(True)
+Gui.f_Main..TitleBar(True)
+Gui.f_Main..Event(UnLoad,Unload)
+Gui.f_Main.lblQuestion.Create(Label,"Would you like to Open an existing CSR or Create a new CSR?",True,298,13,0,11,11,True,0,"Tahoma",8.25,,0,0)
+Gui.f_Main.lblQuestion.BorderStyle(0)
+Gui.f_Main.cmdOpen.Create(Button)
+Gui.f_Main.cmdOpen.Enabled(True)
+Gui.f_Main.cmdOpen.Visible(True)
+Gui.f_Main.cmdOpen.Zorder(0)
+Gui.f_Main.cmdOpen.Size(75,23)
+Gui.f_Main.cmdOpen.Position(11,35)
+Gui.f_Main.cmdOpen.Caption("Open CSR")
+Gui.f_Main.cmdOpen.FontName("Tahoma")
+Gui.f_Main.cmdOpen.FontSize(8.25)
+Gui.f_Main.cmdOpen.Event(Click,cmdOpen_Click)
+Gui.f_Main.cmdNew.Create(Button)
+Gui.f_Main.cmdNew.Enabled(True)
+Gui.f_Main.cmdNew.Visible(True)
+Gui.f_Main.cmdNew.Zorder(0)
+Gui.f_Main.cmdNew.Size(75,23)
+Gui.f_Main.cmdNew.Position(232,35)
+Gui.f_Main.cmdNew.Caption("New CSR")
+Gui.f_Main.cmdNew.FontName("Tahoma")
+Gui.f_Main.cmdNew.FontSize(8.25)
+Gui.f_Main.cmdNew.Event(Click,cmdNew_Click)
+Gui.f_NewCSR..Create(BaseForm)
+Gui.f_NewCSR..Caption("New CSR")
+Gui.f_NewCSR..Size(391,298)
+Gui.f_NewCSR..MinX(0)
+Gui.f_NewCSR..MinY(0)
+Gui.f_NewCSR..Position(0,0)
+Gui.f_NewCSR..AlwaysOnTop(False)
+Gui.f_NewCSR..FontName("Tahoma")
+Gui.f_NewCSR..FontSize(8.25)
+Gui.f_NewCSR..ControlBox(True)
+Gui.f_NewCSR..MaxButton(False)
+Gui.f_NewCSR..MinButton(True)
+Gui.f_NewCSR..MousePointer(0)
+Gui.f_NewCSR..Moveable(True)
+Gui.f_NewCSR..Sizeable(False)
+Gui.f_NewCSR..ShowInTaskBar(True)
+Gui.f_NewCSR..TitleBar(True)
+Gui.f_NewCSR..Event(UnLoad,Unload)
+Gui.f_NewCSR.txtSubject.Create(TextBox,"",True,375,20,0,8,72,True,0,"Tahoma",8.25,,1)
+Gui.f_NewCSR.txtSubject.TabStop(True)
+Gui.f_NewCSR.txtSubject.TabIndex(2)
+Gui.f_NewCSR.lblSubject:.Create(Label,"Subject:",True,40,13,0,8,53,True,0,"Tahoma",8.25,,0,0)
+Gui.f_NewCSR.lblSubject:.BorderStyle(0)
+Gui.f_NewCSR.lblCustomer.Create(Label,"Customer:",True,50,13,0,8,4,True,0,"Tahoma",8.25,,0,0)
+Gui.f_NewCSR.lblCustomer.BorderStyle(0)
+Gui.f_NewCSR.ddlCustomer.Create(DropDownList)
+Gui.f_NewCSR.ddlCustomer.Enabled(True)
+Gui.f_NewCSR.ddlCustomer.Visible(True)
+Gui.f_NewCSR.ddlCustomer.Zorder(0)
+Gui.f_NewCSR.ddlCustomer.Size(129,20)
+Gui.f_NewCSR.ddlCustomer.Position(8,22)
+Gui.f_NewCSR.ddlCustomer.FontName("Tahoma")
+Gui.f_NewCSR.ddlCustomer.FontSize(8.25)
+Gui.f_NewCSR.ddlCustomer.TabStop(True)
+Gui.f_NewCSR.ddlCustomer.TabIndex(1)
+Gui.f_NewCSR.txtProblem.Create(TextBoxR)
+Gui.f_NewCSR.txtProblem.Enabled(True)
+Gui.f_NewCSR.txtProblem.Visible(True)
+Gui.f_NewCSR.txtProblem.Zorder(0)
+Gui.f_NewCSR.txtProblem.Size(376,126)
+Gui.f_NewCSR.txtProblem.Position(8,128)
+Gui.f_NewCSR.txtProblem.FontName("Tahoma")
+Gui.f_NewCSR.txtProblem.FontSize(8.25)
+Gui.f_NewCSR.txtProblem.TabStop(True)
+Gui.f_NewCSR.txtProblem.TabIndex(3)
+Gui.f_NewCSR.lblProblem.Create(Label,"Problem:",True,42,13,0,8,108,True,0,"Tahoma",8.25,,0,0)
+Gui.f_NewCSR.lblProblem.BorderStyle(0)
+Gui.f_NewCSR.cmdCreate.Create(Button)
+Gui.f_NewCSR.cmdCreate.Enabled(True)
+Gui.f_NewCSR.cmdCreate.Visible(True)
+Gui.f_NewCSR.cmdCreate.Zorder(0)
+Gui.f_NewCSR.cmdCreate.Size(75,23)
+Gui.f_NewCSR.cmdCreate.Position(308,20)
+Gui.f_NewCSR.cmdCreate.Caption("Create CSR")
+Gui.f_NewCSR.cmdCreate.FontName("Tahoma")
+Gui.f_NewCSR.cmdCreate.FontSize(8.25)
+Gui.f_NewCSR.cmdCreate.Event(Click,cmdCreate_Click)
+Gui.f_NewCSR.cmdCreate.TabStop(True)
+Gui.f_NewCSR.cmdCreate.TabIndex(4)
+Gui.f_NewCSR.lblType.Create(Label,"Type:",True,28,13,0,150,4,True,0,"Tahoma",8.25,,0,0)
+Gui.f_NewCSR.lblType.BorderStyle(0)
+Gui.f_NewCSR.ddlType.Create(DropDownList)
+Gui.f_NewCSR.ddlType.Enabled(True)
+Gui.f_NewCSR.ddlType.Visible(True)
+Gui.f_NewCSR.ddlType.Zorder(0)
+Gui.f_NewCSR.ddlType.Size(138,20)
+Gui.f_NewCSR.ddlType.Position(150,22)
+Gui.f_NewCSR.ddlType.FontName("Tahoma")
+Gui.f_NewCSR.ddlType.FontSize(8.25)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+V.Global.bError.Declare(Boolean)
+V.Global.bUnattended.Declare(Boolean)
+V.Global.bLoadData.Declare(Boolean)
+V.Global.sModule.Declare(String, "")
+V.Global.sOrderNo.Declare(String)
+V.Global.sOrderLine.Declare(String)
+V.Global.sPart.Declare(String)
+V.Global.sRev.Declare(String)
+V.Global.sLoc.Declare(String)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.Try
+'written for Valley Tool and Manufacturing
+'Custom Customer Service Request project
+'February 15, 2021
+'Written by Ashley Collins
+Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+
+'open the connection to the database
+F.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN, V.Ambient.PUser, V.Ambient.PPass)
+
+'check which hook it is firing from
+
+F.Intrinsic.Control.SelectCase(v.Caller.Hook)
+'call subroutine for each hook to check if the part is in an open CSR
+'Order Lines Hook
+F.Intrinsic.Control.Case(12045)
+	F.Intrinsic.Control.CallSub(OrderCheck)
+'Order Lines Script 3 Hook
+F.Intrinsic.Control.Case(12430)
+	V.Global.sModule.Set("ORDER")
+	Gui.f_Main..Show
+
+'Quote Lines Hook
+F.Intrinsic.Control.Case(10300)
+	F.Intrinsic.Control.CallSub(QuoteCheck)
+'Quote Lines Script 3 Hook
+F.Intrinsic.Control.Case(10690)
+	V.Global.sModule.Set("QUOTE")
+	Gui.f_Main..Show
+'Inventory Master
+F.Intrinsic.Control.Case(10125)
+	F.Intrinsic.Control.CallSub(InventoryCheck)
+'Inventory Master Script 3 Hook
+F.Intrinsic.Control.Case(10230)
+	V.Global.sModule.Set("INVENTORY")
+	Gui.f_Main..Show
+'Router Header
+F.Intrinsic.Control.Case(11110)
+	F.Intrinsic.Control.CallSub(RouterCheck)
+'Router Header Script 3 Hook
+F.Intrinsic.Control.Case(11140)
+	V.Global.sModule.Set("ROUTER")
+	Gui.f_Main..Show
+'BOM Header
+'F.Intrinsic.Control.Case(16473)
+'	F.Intrinsic.Control.CallSub(BOMCheck)
+'BOM Header Script 3 Hook
+'F.Intrinsic.Control.Case(16380)
+'	V.Global.sModule.Set("BOM")
+'	Gui.f_Main..Show
+'Supply and Demand (New)
+F.Intrinsic.Control.Case(52010)
+	F.Intrinsic.Control.CallSub(SDCheck)
+'Supply and Demand (New) Script 3 Hook
+F.Intrinsic.Control.Case(52052)
+	V.Global.sModule.Set("SUPPLYDEMAND")
+	Gui.f_Main..Show
+
+F.Intrinsic.Control.CaseElse
+	'end script
+	F.Intrinsic.Control.CallSub(Unload)
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6274", "ProjectTitle", "CSR Tech Help", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.OrderCheck.Start
+F.Intrinsic.Control.Try
+V.Local.sFullPart.Declare(String)
+V.Local.sOrderNo.Declare(String)
+V.Local.sOrderLine.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.sLoc.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSQL.Declare(String)
+
+V.Local.sPart.Set(V.Passed.000052)
+V.Local.sRev.Set(V.Passed.000053)
+V.Local.sLoc.Set(V.Passed.000054)
+V.Local.sOrderNo.Set(V.Passed.000060)
+V.Local.sOrderLine.Set(V.Passed.000051)
+
+V.Global.sPart.Set(V.Local.sPart)
+V.Global.sRev.Set(v.Local.sRev)
+V.Global.sLoc.Set(V.Local.sLoc)
+V.Global.sOrderNo.Set(V.Local.sOrderNo)
+V.Global.sOrderLine.Set(V.Local.sOrderLine)
+
+F.Intrinsic.String.RPad(V.Local.sPart, " ", 17, V.Local.sPart)
+F.Intrinsic.String.RPad(V.Local.sRev, " ", 3, V.Local.sRev)
+F.Intrinsic.String.Build("{0}{1}", V.Local.sPart, V.Local.sRev, V.Local.sFullPart)
+
+F.Intrinsic.String.Build("SELECT REQUEST_NUMBER FROM V_CUST_SERV_REQ WHERE STATUS = 'O' AND PART = '{0}'", V.Local.sFullPart, v.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+
+'if the part is in an open CSR, set the script 3 button to +CSR and set back color to orange
+F.Intrinsic.Control.If(v.Local.sRet.Trim,<>,"")
+	V.Passed.000210.Set("+CSR")
+	F.Intrinsic.Variable.SetProperty("000210", "FC", 0)
+	F.Intrinsic.Variable.SetProperty("000210", "BC", V.Color.Orange)
+'else set the script 3 button to CSR
+F.Intrinsic.Control.Else
+
+
+	V.Passed.000210.Set("CSR")
+'	F.Intrinsic.Variable.SetProperty("000210", "LOCK", 1)
+	F.Intrinsic.Variable.SetProperty("000210", "BC", V.Color.LtGrey)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6274", "ProjectTitle", "CSR Tech Help", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.OrderCheck.End
+
+Program.Sub.QuoteCheck.Start
+F.Intrinsic.Control.Try
+V.Local.sFullPart.Declare(String)
+V.Local.sLoc.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.sSQL.Declare(String)
+
+V.Local.sPart.Set(V.Passed.000052)
+V.Local.sRev.Set(V.Passed.000053)
+V.Local.sLoc.Set(V.Passed.000054)
+
+V.Global.sPart.Set(V.Local.sPart)
+V.Global.sRev.Set(v.Local.sRev)
+V.Global.sLoc.Set(V.Local.sLoc)
+
+F.Intrinsic.String.RPad(V.Local.sPart, " ", 17, V.Local.sPart)
+F.Intrinsic.String.RPad(V.Local.sRev, " ", 3, V.Local.sRev)
+F.Intrinsic.String.Build("{0}{1}", V.Local.sPart, V.Local.sRev, V.Local.sFullPart)
+
+F.Intrinsic.String.Build("SELECT REQUEST_NUMBER FROM V_CUST_SERV_REQ WHERE STATUS = 'O' AND PART = '{0}'", V.Local.sFullPart, v.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+
+'if the part is in an open CSR, set the script 3 button to +CSR and set back color to orange
+F.Intrinsic.Control.If(v.Local.sRet.Trim,<>,"")
+	V.Passed.000203.Set("+CSR")
+	F.Intrinsic.Variable.SetProperty("000203", "FC", V.Color.Orange)
+	F.Intrinsic.Variable.SetProperty("000203", "BC", V.Color.Orange)
+'else set the script 3 button to CSR
+F.Intrinsic.Control.Else
+
+	V.Passed.000203.Set("CSR")
+	F.Intrinsic.Variable.SetProperty("000203", "FC", 0)
+	F.Intrinsic.Variable.SetProperty("000203", "BC", V.Color.LtGrey)
+	
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6274", "ProjectTitle", "CSR Tech Help", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.QuoteCheck.End
+
+Program.Sub.InventoryCheck.Start
+F.Intrinsic.Control.Try
+V.Local.sFullPart.Declare(String)
+V.Local.sLoc.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.sSQL.Declare(String)
+
+V.Local.sPart.Set(V.Passed.000007)
+V.Local.sRev.Set(V.Passed.000008)
+V.Local.sLoc.Set(V.Passed.000009)
+
+F.Intrinsic.Control.If(V.Local.sPart.Trim,<>,"")
+	V.Global.sPart.Set(V.Local.sPart)
+	V.Global.sRev.Set(v.Local.sRev)
+	V.Global.sLoc.Set(V.Local.sLoc)
+
+
+	F.Intrinsic.String.RPad(V.Local.sPart, " ", 17, V.Local.sPart)
+	F.Intrinsic.String.RPad(V.Local.sRev, " ", 3, V.Local.sRev)
+	F.Intrinsic.String.Build("{0}{1}", V.Local.sPart, V.Local.sRev, V.Local.sFullPart)
+	
+
+	F.Intrinsic.String.Build("SELECT REQUEST_NUMBER FROM V_CUST_SERV_REQ WHERE STATUS = 'O' AND PART = '{0}'", V.Local.sFullPart, v.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+
+	'if the part is in an open CSR, set the script 3 button to +CSR and set back color to orange
+	F.Intrinsic.Control.If(v.Local.sRet.Trim,<>,"")
+		V.Passed.000070.Set("+CSR")
+		F.Intrinsic.Variable.SetProperty("000070", "FC", V.Color.Orange)
+		F.Intrinsic.Variable.SetProperty("000070", "BC", V.Color.Orange)
+	'else set the script 3 button to CSR
+	F.Intrinsic.Control.Else
+
+		V.Passed.000070.Set("CSR")
+		F.Intrinsic.Variable.SetProperty("000070", "FC", 0)
+		F.Intrinsic.Variable.SetProperty("000070", "BC", V.Color.LtGrey)
+	
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6274", "ProjectTitle", "CSR Tech Help", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.InventoryCheck.End
+
+Program.Sub.SDCheck.Start
+F.Intrinsic.Control.Try
+V.Local.iCnt.Declare(Long)
+V.Local.iRowCnt.Declare(Long)
+V.Local.sAccordBDF.Declare(String)
+V.Local.sFullPart.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.sScript.Declare(String)
+V.Local.sSQL.Declare(String)
+
+F.Intrinsic.BDF.Load("SupplyAndDemand-AccordionControlNavigation-bdf", "SupplyAndDemand-AccordionControlNavigation-bdf")
+F.Intrinsic.BDF.Clone("SupplyAndDemand-AccordionControlNavigation-bdf", "TempBDF")
+F.Intrinsic.BDF.ReadRowCount("SupplyAndDemand-AccordionControlNavigation-bdf", V.Local.iRowCnt)
+F.Intrinsic.Math.Sub(V.Local.iRowCnt, 1, v.Local.iRowCnt)
+
+F.Intrinsic.Control.For(V.Local.iCnt, 0, V.Local.iRowCnt, 1)
+	F.Intrinsic.Control.If(V.Local.iCnt,<>,26)
+		F.Intrinsic.BDF.ReadRow("SupplyAndDemand-AccordionControlNavigation-bdf", V.Local.iCnt, V.Local.sScript)
+		F.Intrinsic.BDF.WriteRow("TempBDF", V.Local.sScript)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.BDF.ReadRow("SupplyAndDemand-AccordionControlNavigation-bdf", V.Local.iCnt, V.Local.sScript)
+		F.Intrinsic.Control.ExitFor(V.Local.iCnt)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCnt)
+
+V.Local.sPart.Set(V.Passed.PartNumber)
+V.Local.sRev.Set(V.Passed.PartNumberRevision)
+F.Intrinsic.String.RPad(V.Local.sPart, " ", 17, V.Local.sPart)
+F.Intrinsic.String.RPad(V.Local.sRev, " ", 3, V.Local.sRev)
+F.Intrinsic.String.Build("{0}{1}", V.Local.sPart, V.Local.sRev, V.Local.sFullPart)
+
+F.Intrinsic.String.Build("SELECT REQUEST_NUMBER FROM V_CUST_SERV_REQ WHERE STATUS = 'O' AND PART = '{0}'", V.Local.sFullPart, v.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+
+'if the part is in an open CSR, set the script 3 button to +CSR and set back color to orange
+F.Intrinsic.Control.If(v.Local.sRet.Trim,<>,"")
+	F.Intrinsic.String.Replace(V.Local.sScript,"Script 3", "+CSR", V.Local.sScript )
+	F.Intrinsic.BDF.WriteRow("TempBDF",V.Local.sScript)
+'else set the script 3 button to CSR
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Replace(V.Local.sScript,"Script 3", "CSR", V.Local.sScript )
+	F.Intrinsic.BDF.WriteRow("TempBDF",V.Local.sScript)
+	
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.BDF.Save("TempBDF","SupplyAndDemand-AccordionControlNavigation-bdf")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6274", "ProjectTitle", "CSR Tech Help", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.SDCheck.End
+
+Program.Sub.RouterCheck.Start
+F.Intrinsic.Control.Try
+V.Local.sFullRouter.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.sRouter.Declare(String)
+v.Local.sSQL.Declare(String)
+
+V.Local.sRouter.Set(V.Passed.000014)
+V.Local.sRev.Set(V.Passed.000015)
+F.Intrinsic.String.RPad(v.Local.sRouter, " ", 17, V.Local.sRouter)
+F.Intrinsic.String.RPad(V.Local.sRev, " ", 3, V.Local.sRev)
+F.Intrinsic.String.Build("{0}{1}", V.Local.sRouter, V.Local.sRev, V.Local.sFullRouter)
+
+F.Intrinsic.String.Build("SELECT PART FROM V_INVENTORY_MST2 WHERE TEXT_INFO1 = '{0}' ", V.Local.sFullRouter, v.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+	V.Local.sPart.Set(V.Local.sRet)
+	F.Intrinsic.String.Build("SELECT REQUEST_NUMBER FROM V_CUST_SERV_REQ WHERE STATUS = 'O' AND PART = '{0}'", V.Local.sPart, v.Local.sSQL)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("SELECT REQUEST_NUMBER FROM V_CUST_SERV_REQ WHERE STATUS = 'O' AND PART = '{0}'", V.Local.sFullRouter, v.Local.sSQL)
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+
+'if the part is in an open CSR, set the script 3 button to +CSR and set back color to orange
+F.Intrinsic.Control.If(v.Local.sRet.Trim,<>,"")
+	V.Passed.000203.Set("+CSR")
+	F.Intrinsic.Variable.SetProperty("000203", "FC", 0)
+	F.Intrinsic.Variable.SetProperty("000203", "BC", V.Color.Orange)
+'else set the script 3 button to CSR
+F.Intrinsic.Control.Else
+
+
+	V.Passed.000203.Set("CSR")
+'	F.Intrinsic.Variable.SetProperty("000210", "LOCK", 1)
+	F.Intrinsic.Variable.SetProperty("000203", "BC", V.Color.LtGrey)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6274", "ProjectTitle", "CSR Tech Help", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.RouterCheck.End
+
+Program.Sub.BOMCheck.Start
+F.Intrinsic.Control.Try
+V.Local.sBOM.Declare(String)
+V.Local.sLoc.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.sSQL.Declare(String)
+
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6274", "ProjectTitle", "CSR Tech Help", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.BOMCheck.End
+
+Program.Sub.cmdOpen_Click.Start
+F.Intrinsic.Control.Try
+V.Local.bCheck.Declare(Boolean)
+V.Local.bContains.Declare(Boolean)
+V.Local.iCnt.Declare(Long)
+V.Local.iCRMHwnd.Declare(Long)
+V.Local.iPID.Declare(Long)
+V.Local.iRet.Declare(Long)
+V.Local.iWidths.Declare(Long)
+V.Local.sLoc.Declare(String)
+V.Local.sFullPart.Declare(String)
+V.Local.sFullRouter.Declare(String)
+V.Local.sParams.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sProcess.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sRet2.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.sRouter.Declare(String)
+V.Local.sRouterRev.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.sSelect.Declare(String)
+
+'create a browser of all of the CSRs that currently exist for that part
+F.Intrinsic.String.Split("CSR Number*!*Customer*!*Customer Name*!*Subject*!*Status*!*Part", "*!*", V.Local.sTitles)
+F.Intrinsic.String.Split("1000*!*800*!*2500*!*2500*!*800*!*2000", "*!*", v.Local.iWidths)
+	
+F.Intrinsic.Control.SelectCase(V.Global.sModule.Trim)
+
+	F.Intrinsic.Control.Case("ORDER")	
+		V.Local.sPart.Set(V.Passed.000052)
+		V.Local.sRev.Set(V.Passed.000053)
+		V.Local.sLoc.Set(V.Passed.000054)
+		F.Intrinsic.String.RPad(V.Local.sPart, " ", 17, V.Local.sPart)
+		F.Intrinsic.String.RPad(V.Local.sRev, " ", 3, V.Local.sRev)
+		F.Intrinsic.String.Build("{0}{1}", V.Local.sPart, V.Local.sRev, V.Local.sFullPart)
+
+	F.Intrinsic.Control.Case("QUOTE")
+		V.Local.sPart.Set(V.Passed.000052)
+		V.Local.sRev.Set(v.Passed.000053)
+		F.Intrinsic.String.RPad(V.Local.sPart, " ", 17, V.Local.sPart)
+		F.Intrinsic.String.RPad(V.Local.sRev, " ", 3, V.Local.sRev)
+		F.Intrinsic.String.Build("{0}{1}", V.Local.sPart, V.Local.sRev, V.Local.sFullPart)
+
+	f.Intrinsic.Control.Case("INVENTORY")
+
+		V.Local.sPart.Set(V.Passed.000007)
+		V.Local.sRev.Set(V.Passed.000008)
+		V.Local.sLoc.Set(V.Passed.000009)
+		F.Intrinsic.String.RPad(V.Local.sPart, " ", 17, V.Local.sPart)
+		F.Intrinsic.String.RPad(V.Local.sRev, " ", 3, V.Local.sRev)
+		F.Intrinsic.String.Build("{0}{1}", V.Local.sPart, V.Local.sRev, V.Local.sFullPart)
+
+	F.Intrinsic.Control.Case("ROUTER")
+		V.Local.sRouter.Set(V.Passed.000014)
+		V.Local.sRev.Set(V.Passed.000015)
+		F.Intrinsic.String.RPad(v.Local.sRouter, " ", 17, V.Local.sRouter)
+		F.Intrinsic.String.RPad(V.Local.sRev, " ", 3, V.Local.sRev)
+		F.Intrinsic.String.Build("{0}{1}", V.Local.sRouter, V.Local.sRev, V.Local.sFullRouter)
+
+		F.Intrinsic.String.Build("SELECT PART FROM V_INVENTORY_MST2 WHERE TEXT_INFO1 = '{0}' ", V.Local.sFullRouter, v.Local.sSQL)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			V.Local.sFullPart.Set(V.Local.sRet)
+		F.Intrinsic.Control.Else
+			V.Local.sFullPart.Set(V.Local.sFullRouter)
+		F.Intrinsic.Control.EndIf
+
+	'F.Intrinsic.Control.Case("BOM")
+
+	F.Intrinsic.Control.Case("SUPPLYDEMAND")
+		V.Local.sPart.Set(V.Passed.PartNumber)
+		V.Local.sRev.Set(V.Passed.PartNumberRevision)
+		F.Intrinsic.String.RPad(V.Local.sPart, " ", 17, V.Local.sPart)
+		F.Intrinsic.String.RPad(V.Local.sRev, " ", 3, V.Local.sRev)
+		F.Intrinsic.String.Build("{0}{1}", V.Local.sPart, V.Local.sRev, V.Local.sFullPart)
+	
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.String.Build("SELECT REQUEST_NUMBER, CUSTOMER, NAME, SUBJECT, STATUS,PART FROM V_CUST_SERV_REQ WHERE PART = '{0}' ORDER BY REQUEST_NUMBER", V.Local.sFullPart, V.Local.sSQL)
+F.Intrinsic.UI.Browser("Select a Customer Service Request", "con", V.Local.sSQL, V.Local.sTitles, v.Local.iWidths, V.Local.sRet2)
+F.Intrinsic.Control.If(V.Local.sRet2.Trim,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(v.Local.sRet2,"*!*", V.Local.sRet2)
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("No Customer Service was selected. You must select a Customer Service Request to continue!")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.UI.InvokeWaitDialog("Opening Customer Service Request in CRM...", "Please Wait")
+F.Intrinsic.Task.IsProgramRunning("CRM.exe", V.Local.bCheck)
+F.Intrinsic.Control.If(V.Local.bCheck,=,False)
+	F.Global.General.LaunchMenuTask(243,0,V.Local.iRet)
+	F.Intrinsic.UI.Sleep(15)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Task.IsProgramRunning("CRM.exe", V.Local.bCheck)
+F.Intrinsic.Control.If(V.Local.bCheck,=,True)
+	F.Intrinsic.Task.GetProcessList(V.Local.sRet)
+	F.Intrinsic.Control.If(V.DataTable.dtProcesses.Exists)
+		F.Data.DataTable.Close("dtProcesses")
+	F.Intrinsic.Control.EndIf
+				
+	F.Data.DataTable.CreateFromString("dtProcesses", V.Local.sRet, "PID*!*NAME*!*LOCATION*!*VALUE", "LONG*!*STRING*!*STRING*!*STRING", "!*!", "*!*",True)
+	F.Data.DataTable.Select("dtProcesses", "[NAME] = 'CRM'", V.Local.sSelect)
+	F.Intrinsic.Control.If(V.Local.sSelect.Trim,<>,"***NORETURN***")
+		V.Local.iPID.Set(V.DataTable.dtProcesses(V.Local.sSelect.Trim).PID!FieldVal)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Local.iPID,<>,0)
+	
+		F.Intrinsic.API.GetHandleFromPID(V.Local.iPID, V.Local.iCRMHwnd)
+		
+		F.Intrinsic.String.Build("MODE::11*!*COMPANY-NUMBER::{0}*!*COMPANY-TYPE::15*!*NEW-CSR::0*!*SERV-REQ-NUMBER::{1}",V.Local.sRet2(1).Trim,V.Local.sRet2(0).Long,V.Local.sParams)  
+		F.Intrinsic.API.ChangeCaption(V.Local.iCRMHwnd, V.Local.sParams)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.UI.CloseWaitDialog
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6274", "ProjectTitle", "CSR Tech Help", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdOpen_Click.End
+
+Program.Sub.cmdNew_Click.Start
+F.Intrinsic.Control.Try
+V.Local.iCnt.Declare(String)
+V.Local.sCustomer.Declare(String)
+V.Local.sOrderLine.Declare(String)
+V.Local.sOrderNo.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSQL.Declare(String)
+
+V.Local.sSQL.Set("SELECT CUSTOMER FROM V_CUSTOMER_MASTER ORDER BY CUSTOMER")
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+	F.Intrinsic.String.Split(V.Local.sRet,"#$#", V.Local.sRet)
+	F.Intrinsic.Control.For(V.Local.iCnt, V.Local.sRet.LBound, V.Local.sRet.UBound, 1)
+		Gui.f_NewCSR.ddlCustomer.AddItem(V.Local.sRet(V.Local.iCnt).Trim)
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+F.Intrinsic.Control.EndIf
+
+V.Local.sSQL.Set("SELECT REQ_TYPE FROM V_CUST_SERV_REQ_TYP ORDER BY REQ_TYPE")
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+	F.Intrinsic.String.Split(V.Local.sRet, "#$#", V.Local.sRet)
+	F.Intrinsic.Control.For(V.Local.iCnt, V.Local.sRet.LBound, V.Local.sRet.UBound, 1)
+		Gui.f_NewCSR.ddlType.AddItem(V.Local.sRet(V.Local.iCnt).Trim	)
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+F.Intrinsic.Control.EndIf
+
+'set the passed customer for order lines, quote lines and router 
+F.Intrinsic.Control.SelectCase(V.Global.sModule.Trim)
+
+	F.Intrinsic.Control.Case("ORDER")
+		V.Local.sOrderNo.Set(V.Passed.000060)
+		V.Local.sOrderLine.Set(V.Passed.000051)
+				
+		F.Intrinsic.String.LPad(v.Local.sOrderNo, "0", 7, V.Local.sOrderNo)
+		
+		F.Intrinsic.String.Build("SELECT CUSTOMER FROM V_ORDER_HEADER WHERE ORDER_NO = '{0}' ", V.Local.sOrderNo, , V.Local.sSQL)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+			Gui.f_NewCSR.ddlCustomer.Text(V.Local.sRet.Trim)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Case("QUOTE")
+		v.Local.sCustomer.Set(v.Passed.000112)
+		gui.f_NewCSR.ddlCustomer.Text(V.Local.sCustomer.Trim)
+	F.Intrinsic.Control.Case("ROUTER")
+		V.Local.sCustomer.Set(V.Passed.000027)
+		F.Intrinsic.Control.If(V.Local.sCustomer.Trim,<>,"")
+			Gui.f_NewCSR.ddlCustomer.Text(V.Local.sCustomer.Trim)
+		F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndSelect
+
+Gui.f_NewCSR..Show
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6274", "ProjectTitle", "CSR Tech Help", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdNew_Click.End
+
+Program.Sub.cmdCreate_Click.Start
+F.Intrinsic.Control.Try
+V.Local.bCheck.Declare(Boolean)
+V.Local.bContains.Declare(Boolean)
+V.Local.iCnt.Declare(Long)
+V.Local.iCRMHwnd.Declare(Long)
+V.Local.iPID.Declare(Long)
+V.Local.iRequestNo.Declare(Long)
+V.Local.iRet.Declare(Long)
+V.Local.sBOM.Declare(String)
+V.Local.sCustomer.Declare(String)
+V.Local.sCustomerName.Declare(String)
+V.Local.sFullPart.Declare(String)
+V.Local.sFullRouter.Declare(String)
+V.Local.sLoc.Declare(String)
+V.Local.sOrderLine.Declare(String)
+V.Local.sOrderNo.Declare(String)
+V.Local.sParams.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sProblem.Declare(String, "")
+V.Local.sProcess.Declare(String)
+V.Local.sRequestNo.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.sRouter.Declare(String)
+V.Local.sRouterRev.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sStatus.Declare(String)
+V.Local.sSubject.Declare(String, "")
+V.Local.sTime.Declare(String)
+V.Local.sSelect.Declare(String)
+
+V.Local.sCustomer.Set(V.Screen.f_NewCSR!ddlCustomer.Value)
+V.Local.sSubject.Set(V.Screen.f_NewCSR!txtSubject.Text)
+V.Local.sProblem.Set(v.Screen.f_NewCSR!txtProblem.Text)
+
+F.Intrinsic.UI.InvokeWaitDialog("Creating new Customer Service Request...", "Please Wait")
+F.Intrinsic.String.Build("SELECT NAME_CUSTOMER FROM V_CUSTOMER_MASTER WHERE CUSTOMER = '{0}'", V.Local.sCustomer.Trim, V.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sCustomerName)
+F.Intrinsic.String.Replace(V.Local.sCustomerName, "'", "", V.Local.sCustomerName)
+
+V.Local.sSQL.Set("SELECT TOP 1 REQUEST_NUMBER FROM V_CUST_SERV_REQ ORDER BY REQUEST_NUMBER DESC")
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+	V.Local.iRequestNo.Set(V.Local.sRet.Long)
+	F.Intrinsic.Math.Add(V.Local.iRequestNo,1,V.Local.iRequestNo)
+	F.Intrinsic.String.LPad(V.Local.iRequestNo,"0", 7, V.Local.sRequestNo)
+F.Intrinsic.Control.Else
+	V.Local.sRequestNo.Set("0000001")
+F.Intrinsic.Control.EndIf
+
+V.Local.sTime.Set(V.Ambient.Time.FormatHhNnSs)
+F.Intrinsic.String.RPad(V.Local.sTime, "0", 8, V.Local.sTime)
+
+
+V.Local.sStatus.Set("O")
+F.Intrinsic.String.Build("INSERT INTO CUST_SERV_REQ (REQUEST_NUMBER, CUSTOMER, NAME, DATE_ENTERED, TIME_ENTERED, ENTERED_BY, SUBJECT, STATUS, PRIORITY, DATE_LAST_UPDATE, TIME_LAST_UPDATE, LAST_BY) VALUES ('{0}' ,'{1}','{2}' ,'{3}','{4}' ,'{5}','{6}' ,'{7}','4', '{8}' ,'{9}', '{10}')", v.Local.sRequestNo, V.Local.sCustomer.Trim, V.Local.sCustomerName.Trim, V.Ambient.Date.FormatYYYYMMDD, V.Local.sTime, V.Caller.User, V.Local.sSubject.Trim, V.Local.sStatus, V.Ambient.Date.FormatYYYYMMDD, V.Local.sTime, V.Caller.User, V.Local.sSQL)
+F.ODBC.Connection!con.Execute(V.Local.sSQL)
+
+F.Intrinsic.String.Build("INSERT INTO CUST_SVC_RQ_NOTES (CSR_NUMBER, TYPE_CD, DATE, TIME, USERID, TEXT) VALUES ('{0}', 'P', '{1}', '{2}', '{3}', '{4}')", V.Local.sRequestNo, V.Ambient.Date.FormatYYYYMMDD, V.Local.sTime, V.Caller.User, V.Local.sProblem.Trim, V.Local.sSQL)
+F.ODBC.Connection!con.Execute(V.Local.sSQL)
+
+F.Intrinsic.UI.ChangeWaitStatus("Opening new Customer Service Request in CRM...")
+F.Intrinsic.Task.IsProgramRunning("CRM.exe", V.Local.bCheck)
+F.Intrinsic.Control.If(V.Local.bCheck,=,False)
+	F.Global.General.LaunchMenuTask(243,0,V.Local.iRet)
+	F.Intrinsic.UI.Sleep(15)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Task.IsProgramRunning("CRM.exe", V.Local.bCheck)
+F.Intrinsic.Control.If(V.Local.bCheck,=,True)
+	F.Intrinsic.Task.GetProcessList(V.Local.sRet)
+	F.Intrinsic.Control.If(V.DataTable.dtProcesses.Exists)
+		F.Data.DataTable.Close("dtProcesses")
+	F.Intrinsic.Control.EndIf
+				
+	F.Data.DataTable.CreateFromString("dtProcesses", V.Local.sRet, "PID*!*NAME*!*LOCATION*!*VALUE", "LONG*!*STRING*!*STRING*!*STRING", "!*!", "*!*",True)
+	F.Data.DataTable.Select("dtProcesses", "[NAME] = 'CRM'", V.Local.sSelect)
+	F.Intrinsic.Control.If(V.Local.sSelect.Trim,<>,"***NORETURN***")
+		V.Local.iPID.Set(V.DataTable.dtProcesses(V.Local.sSelect.Trim).PID!FieldVal)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Local.iPID,<>,0)
+		F.Intrinsic.API.GetHandleFromPID(V.Local.iPID, V.Local.iCRMHwnd)
+		
+		'build the API information 
+		
+		F.Intrinsic.Control.SelectCase(V.Global.sModule.Trim)
+
+			F.Intrinsic.Control.Case("ORDER")
+				 'set the sales order information in CRM
+				 V.Local.sPart.Set(V.Passed.000052)
+				V.Local.sRev.Set(V.Passed.000053)
+				V.Local.sLoc.Set(V.Passed.000054)
+				V.Local.sOrderNo.Set(V.Passed.000060)
+				V.Local.sOrderLine.Set(V.Passed.000051)
+				
+				F.Intrinsic.String.LPad(v.Local.sOrderNo, "0", 7, V.Local.sOrderNo)
+				F.Intrinsic.String.LPad(v.Local.sOrderLine, "0", 3, V.Local.sOrderLine)
+				F.Intrinsic.String.RPad(V.Local.sPart, " ", 17, V.Local.sPart)
+				F.Intrinsic.String.RPad(V.Local.sRev, " ", 3, V.Local.sRev)
+				F.Intrinsic.String.Build("{0}{1}", V.Local.sPart, V.Local.sRev, V.Local.sFullPart)
+				
+				F.Intrinsic.String.Build("UPDATE CUST_SERV_REQ SET SALES_ORD = '{0}', SALES_LINE = '{1}', PART = '{2}' WHERE REQUEST_NUMBER = '{4}'", V.Local.sOrderNo, v.Local.sOrderLine, V.Local.sFullPart, V.Local.sRequestNo, V.Local.sSQL)
+				
+			F.Intrinsic.Control.Case("QUOTE")
+				V.Local.sPart.Set(V.Passed.000052)
+				V.Local.sRev.Set(v.Passed.000053)
+				F.Intrinsic.String.RPad(V.Local.sPart, " ", 17, V.Local.sPart)
+				F.Intrinsic.String.RPad(V.Local.sRev, " ", 3, V.Local.sRev)
+				F.Intrinsic.String.Build("{0}{1}", V.Local.sPart, V.Local.sRev, V.Local.sFullPart)
+				
+				F.Intrinsic.String.Build("UPDATE CUST_SERV_REQ SET  PART = '{0}' WHERE REQUEST_NUMBER = '{1}'",  V.Local.sFullPart, V.Local.sRequestNo, V.Local.sSQL)
+			f.Intrinsic.Control.Case("INVENTORY")
+				V.Local.sPart.Set(V.Passed.000007)
+				V.Local.sRev.Set(V.Passed.000008)
+				
+				F.Intrinsic.String.RPad(V.Local.sPart, " ", 17, V.Local.sPart)
+				F.Intrinsic.String.RPad(V.Local.sRev, " ", 3, V.Local.sRev)
+				F.Intrinsic.String.Build("{0}{1}", V.Local.sPart, V.Local.sRev, V.Local.sFullPart)
+				
+				F.Intrinsic.String.Build("UPDATE CUST_SERV_REQ SET  PART = '{0}' WHERE REQUEST_NUMBER = '{1}'",  V.Local.sFullPart, V.Local.sRequestNo, V.Local.sSQL)
+			
+			F.Intrinsic.Control.Case("ROUTER")
+				V.Local.sRouter.Set(V.Passed.000014)
+				V.Local.sRouterRev.Set(V.Passed.000015)
+				F.Intrinsic.String.RPad(V.Local.sRouter, " ", 17, V.Local.sRouter)
+				F.Intrinsic.String.RPad(V.Local.sRouterRev, " ", 3, V.Local.sRouterRev)
+				F.Intrinsic.String.Build("{0}{1}", V.Local.sRouter, V.Local.sRouterRev, V.Local.sFullRouter)
+				
+				F.Intrinsic.String.Build("SELECT PART FROM V_INVENTORY_MST2 WHERE TEXT_INFO1 = '{0}' ", V.Local.sFullRouter, v.Local.sSQL)
+				F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+				F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+					V.Local.sFullPart.Set(V.Local.sRet)
+				F.Intrinsic.Control.Else
+					V.Local.sFullPart.Set(V.Local.sFullRouter)
+				F.Intrinsic.Control.EndIf
+		
+				F.Intrinsic.String.Build("UPDATE CUST_SERV_REQ SET  PART = '{0}' WHERE REQUEST_NUMBER = '{1}'",  V.Local.sFullPart, V.Local.sRequestNo, V.Local.sSQL)
+				
+'			F.Intrinsic.Control.Case("BOM")
+'				F.Intrinsic.String.RPad(V.Local.sPart, " ", 17, V.Local.sPart)
+'				F.Intrinsic.String.RPad(V.Local.sRev, " ", 3, V.Local.sRev)
+'				F.Intrinsic.String.Build("{0}{1}", V.Local.sPart, V.Local.sRev, V.Local.sFullPart)
+'				
+'				F.Intrinsic.String.Build("UPDATE CUST_SERV_REQ SET  PART = '{0}' WHERE REQUEST_NUMBER = '{1}'",  V.Local.sFullPart, V.Local.sRequestNo, V.Local.sSQL)
+			F.Intrinsic.Control.Case("SUPPLYDEMAND")
+				V.Local.sPart.Set(V.Passed.PartNumber)
+				V.Local.sRev.Set(V.Passed.PartNumberRevision)
+				F.Intrinsic.String.RPad(V.Local.sPart, " ", 17, V.Local.sPart)
+				F.Intrinsic.String.RPad(V.Local.sRev, " ", 3, V.Local.sRev)
+				F.Intrinsic.String.Build("{0}{1}", V.Local.sPart, V.Local.sRev, V.Local.sFullPart)
+				
+				F.Intrinsic.String.Build("UPDATE CUST_SERV_REQ SET  PART = '{0}' WHERE REQUEST_NUMBER = '{1}'",  V.Local.sFullPart, V.Local.sRequestNo, V.Local.sSQL)
+		F.Intrinsic.Control.EndSelect
+		
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.String.Build("MODE::11*!*COMPANY-NUMBER::{0}*!*COMPANY-TYPE::15*!*NEW-CSR::0*!*SERV-REQ-NUMBER::{1}",V.Local.sCustomer, V.Local.sRequestNo,V.Local.sParams)  
+		F.Intrinsic.API.ChangeCaption(V.Local.iCRMHwnd, V.Local.sParams)
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.EndIf
+
+Gui.f_NewCSR.txtSubject.Text("")
+Gui.f_NewCSR.txtProblem.Text("")
+
+F.Intrinsic.UI.CloseWaitDialog
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6274", "ProjectTitle", "CSR Tech Help", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdCreate_Click.End
+
+Program.Sub.Unload.Start
+F.Intrinsic.Control.Try
+
+'close the connection to the database
+F.ODBC.Connection!con.Close
+
+'end the script
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6274", "ProjectTitle", "CSR Tech Help", "Callback", "UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.Unload.End
+
+Program.Sub.ErrorMessage.Start
+'basic error message for replacing catch block
+'this is really just for when printing the message and ending program
+'pass error number, error description, current subroutine
+'optional callback sub, this will be called before ending
+'optional unattended parameters, those subs may not exist if not using them but won't be called
+F.Intrinsic.Control.Try
+
+V.Local.iError.Declare(Long)
+V.Local.sErrorDescription.Declare(String)
+V.Local.sSubroutine.Declare(String)
+V.Local.sError.Declare(String)
+V.Local.bExists.Declare(Boolean)
+V.Local.sCallback.Declare(String)
+
+V.Local.iError.Set(V.Args.ErrorNumber)
+V.Local.sErrorDescription.Set(V.Args.ErrorDescription)
+V.Local.sSubroutine.Set(V.Args.Subroutine)
+
+'make sure we aren't in an error loop
+F.Intrinsic.Control.If(V.Global.bError)
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.EndIf
+V.Global.bError.Set(True)
+
+F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}", V.Caller.ScriptFile, V.Ambient.Newline, V.Local.sSubroutine, V.Local.iError, V.Local.sErrorDescription, V.Ambient.GABVersion, V.Local.sError)
+
+F.Intrinsic.Variable.ArgExists("UNATTENDED", V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists)
+	F.Intrinsic.Control.If(V.Args.UNATTENDED)
+		F.Intrinsic.Control.CallSub(UnattendedErrorMessage, "MESSAGE", V.Local.sError, "PROJECT", V.Args.PROJECT, "PROJECTTITLE", V.Args.PROJECTTITLE)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Variable.ArgExists("Callback", V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists)
+	V.Local.sCallback.Set(V.Args.Callback.Trim)
+	F.Intrinsic.Control.CallSub(V.Local.sCallback)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.EndTry
+Program.Sub.ErrorMessage.End
+
+Program.Sub.Comments.Start
+${$5$}$3.0.0.0$}$1
+${$6$}$acollins$}$20210303130111898$}$h98hERc2yV72q0GaUGlwSaoK/aefTdVkB5SGxLdVwE+o76D1B/1ZuR8w32AYF9MeMoRbqSVooHEGJ3cOthsT7w==
+Program.Sub.Comments.End
